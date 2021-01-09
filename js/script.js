@@ -17,18 +17,27 @@ const quotes = [
 
 const colors = ["red", "orange", "yellow", "green", "blue", "purple", "black", "gray"];
 
-// create and return a random number based on the number of elements in the given array
+// create and return a random number based on
+// the number of elements in the quotes array
 
-function getRandomArrayItem(array) {
+function getRandomQuote(array) {
   const randomNumber = Math.floor( Math.random() * array.length);
   return randomNumber;
+}
+
+// [extra credit] create and return a random item in an array,
+// used for background color selection
+
+function getRandomArrayItem(array) {
+  const randomItem = Math.floor( Math.random() * array.length);
+  return randomItem;
 }
 
 // The printQuote function takes the random number to select a quote,
 // builds the HTML and inserts it into the page
 
 function printQuote() {
-  const selectedQuote = getRandomArrayItem(quotes);
+  const selectedQuote = getRandomQuote(quotes);
     let htmlQuote = `
       <p class="quote"> ${quotes[selectedQuote].quote} </p>
       <p class="source"> ${quotes[selectedQuote].source}
